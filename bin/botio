@@ -56,3 +56,14 @@ program
   });
 
 program.parse(process.argv);
+
+// handle signals
+process.on( "SIGINT", function() {
+  console.log('CLOSING [SIGINT]');
+  process.exit();
+} );
+process.on( "SIGTERM", function() {
+  console.log('CLOSING [SIGTERM]');
+  process.exit();
+} );
+
